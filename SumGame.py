@@ -11,7 +11,7 @@ x = 0
 while True:
     check = runs1[x * i] + runs1[i]
     check2 = runs2[x * i] + runs2[i]
-    if i > len(runs1) | i > len(runs2):
+    if i > len(runs1) | i > len(runs2) | (x * i) > len(runs1) | (x * i) > len(runs2):
         print(0)
     elif check == check2:
         equalDay = len(range(0, i + 1))
