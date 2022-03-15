@@ -4,12 +4,13 @@ c = int(input())
 d = int(input())
 S = int(input()) # Total length of step
 
-
 positionFromStart1 = a - b
 currentTotal1 = a + b
 positionFromStart2 = c - d
 currentTotal2 = c + d
 
+# note: the current total can never be greater than the total length of step
+# if it is, then it should not run
 while currentTotal1 <= S:
     if currentTotal1 + (a + b) > S:
         difference1 = S - currentTotal1
