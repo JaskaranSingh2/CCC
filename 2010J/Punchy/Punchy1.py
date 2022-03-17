@@ -1,7 +1,5 @@
 import math
 
-from numpy import longcomplex
-
 a = 0
 b = 0
 
@@ -14,9 +12,9 @@ while True:
                     B = int(tempL[4])
     elif tempL[0] == "2":
             if tempL[2] == "A":
-                    print(A)
+                    print(int(A))
             else:
-                    print(B)
+                    print(int(B))
     elif tempL[0] == "3":
             if tempL[2] == "A":
                     A = A + B
