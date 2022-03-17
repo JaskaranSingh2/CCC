@@ -5,7 +5,6 @@ from numpy import longcomplex
 a = 0
 b = 0
 
-
 while True:
     tempL = list(input())
     if tempL[0] == "1":
@@ -16,10 +15,8 @@ while True:
     elif tempL[0] == "2":
             if tempL[2] == "A":
                     print(A)
-                    continue
             else:
                     print(B)
-                    continue
     elif tempL[0] == "3":
             if tempL[2] == "A":
                     A = A + B
