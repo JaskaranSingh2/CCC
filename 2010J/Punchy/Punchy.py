@@ -20,8 +20,10 @@ for x in range(len(store)): # for x in the range of the length of the list
         elif store[x][0] == "2":
                 if store[x][2] == "A":
                         print(A)
+                        continue
                 else:
                         print(B)
+                        continue
         elif store[x][0] == "3":
                 if store[x][2] == "A":
                         A = A + B
