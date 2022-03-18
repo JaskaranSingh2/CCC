@@ -1,25 +1,19 @@
-# d = [(1, 2, 3), (3, 4, 5), (5, 6, 7)]
-# for x, y, z in d:
-#     print(x, y, z)
+def splitter():
+    temperatures = input().split()
+    averages = temperatures[1:]
+    return averages
 
-#     # unpacking tuples in a list
+def cycle(arr):
+    differences = []
+    i = 1 # 1-based indexing
+    while i < len(arr):
+        differences.append(int(arr[i]) - int(arr[i-1]))
+        i+=1
+    print(len(set(differences)))
+    print(arr[i], arr[i-1]) # Why does it say it's out of range? It was working before...
 
-#     numbers = [12, 23, 3, 4, 52, 6]
-
-#     copy = [ALL for ALL in numbers]
-#     print(copy)
-#     greater = [gThanTen for gThanTen in numbers if gThanTen > 10]
-#     print(greater)
-
-l1 = [3, 4, 6, 4, 5, 7, 5]
-l2 = [1, 4, 5]
-# l1[1] - l1[0] so math indexing not zero-indexing
-differences = []
-index = 1
-while index < len(l2): # index <= 6
-    differences.append(int(l2[index]) - int(l2[index-1]))
-    # print(l1[index], l1[index-1])
-    index+=1
-
-print(len(set(differences)))
-
+while True:
+    if splitter() == ["0"]:
+        exit()
+    else:
+        cycle(splitter())

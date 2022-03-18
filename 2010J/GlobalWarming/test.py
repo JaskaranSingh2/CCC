@@ -1,7 +1,6 @@
 def take():
-    takeInput = input().split()
-    averages = takeInput[1:]
-    print(averages)
+    inputs = input().split()
+    averages = inputs[1:]
     return averages
 
 def stuff(avg):
