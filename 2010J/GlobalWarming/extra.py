@@ -1,3 +1,5 @@
+import itertools as cyc
+
 d = [(1, 2, 3), (3, 4, 5), (5, 6, 7)]
 for x, y, z in d:
     print(x, y, z)
@@ -10,3 +12,5 @@ for x, y, z in d:
     print(copy)
     greater = [gThanTen for gThanTen in numbers if gThanTen > 10]
     print(greater)
+
+cyc.cycle("1 2 3")
