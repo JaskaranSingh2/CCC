@@ -29,38 +29,45 @@ visited = [
     [-1, -5]
     ]
 
-# for x, y in visited:
-#     print(x, y)
+def checker(point, existing, added):
+    i = 0
+    while i < len(existing):
+        if point == existing[i]:
+            print(point, "danger")
+            exit()
+        else:
+            i += 1
+    
+    j = 0
+    while j < len(added):
+        if added.count(point) > 1:
+            print(point, "danger")
+            exit()
+        else:
+            j += 1
 
+    print(point, "safe")
 
 drill = input().split()
 lastPoint = [-1, -5]
 sto = []
 
-
-if drill[0] == "l":
-    lastPoint[0] = int(lastPoint[0]) - int(drill[1:])
-    sto.append(lastPoint)
-elif drill[0] == "r":
-    lastPoint[0] = int(lastPoint[0]) + int(drill[1:])
-    sto.append(lastPoint)
-elif drill[0] == "d":
-    lastPoint[1] = int(lastPoint[1]) - int(drill[1:])
-    sto.append(lastPoint)
-elif drill[0] == "u":
-    lastPoint[1] = int(lastPoint[1]) + int(drill[1:])
-    sto.append(lastPoint)
-elif drill[0] == "q":
-    exit()
-
-i = 0
-j = 0
-
-while i < len(sto):
-    while j < len(visted):
-        if sto[i] == visited[j]:
-            print(sto[i], "danger")
-            exit()
-        else:
-            j += 1
-    i += 1
+while True:
+    if drill[0] == "l":
+        lastPoint[0] -= int(drill[1])
+        sto.append(lastPoint)
+        checker(lastPoint, visited, sto)
+    elif drill[0] == "r":
+        lastPoint[0] += int(drill[1])
+        sto.append(lastPoint)
+        checker(lastPoint, visited, sto)
+    elif drill[0] == "d":
+        lastPoint[1] -= int(drill[1])
+        sto.append(lastPoint)
+        checker(lastPoint, visited, sto)
+    elif drill[0] == "u":
+        lastPoint[1] += int(drill[1])
+        sto.append(lastPoint)
+        checker(lastPoint, visited, sto)
+    elif drill[0] == "q":
+        exit()
