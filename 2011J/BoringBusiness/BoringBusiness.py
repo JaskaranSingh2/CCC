@@ -48,18 +48,18 @@ while True:
     if drill[0] == "l":
         lastPoint[0] -= int(drill[1])
         checker(lastPoint, visited)
-        visited.append(lastPoint)
+        visited.append(lastPoint[:]) # Copy array instead of pointing to same memory location.
     elif drill[0] == "r":
         lastPoint[0] += int(drill[1])
         checker(lastPoint, visited)
-        visited.append(lastPoint)
+        visited.append(lastPoint[:])
     elif drill[0] == "d":
         lastPoint[1] -= int(drill[1])
         checker(lastPoint, visited)
-        visited.append(lastPoint)
+        visited.append(lastPoint[:])
     elif drill[0] == "u":
         lastPoint[1] += int(drill[1])
         checker(lastPoint, visited)
-        visited.append(lastPoint)
+        visited.append(lastPoint[:])
     elif drill[0] == "q":
         exit()
