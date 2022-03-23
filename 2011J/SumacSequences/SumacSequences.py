@@ -7,13 +7,14 @@ def sumac(t1, t2):
     sumacList = [t1, t2]
     i = 1
     while True:
-        nextSeq = int(sumacList[i-1]) - int(sumacList[i])
+        nextSeq = int(sumacList[i - 1]) - int(sumacList[i])
         sumacList.append(nextSeq)
-        i+=1
-        if sumacList[i] > sumacList[i-1]:
+        i += 1
+        if sumacList[i] > sumacList[i - 1]:
             print(len(sumacList))
             exit()
 
-t1 = int(input()) 
+
+t1 = int(input())
 t2 = int(input())
 sumac(t1, t2)

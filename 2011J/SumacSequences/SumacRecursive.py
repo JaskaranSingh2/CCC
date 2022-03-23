@@ -1,15 +1,18 @@
 # t(n+2) = t(n) - t(n+1)
-
-def sumac(tn, tnp1):
-    termList = [tn, tnp1]
-    nextTerm = tn - tnp1
-    termList.append(nextTerm)
-    if nextTerm > tnp1:
-        print(len(termList))
+# t(1+2) = t(1) - t(2)
+# This doesn't work as of yet
+def sumac(t1, t2):
+    sumacList = [t1, t2]
+    nextSeq = t1 - t2
+    sumacList.append(nextSeq)
+    if nextSeq < t2:
+        sumac(t1, nextSeq)
+    else:
+        print(len(sumacList))
         exit()
-    sumac(tnp1, nextTerm)
 
-tn = int(input())
-tnp1 = int(input())
 
-sumac(tn, tnp1)
+tO = int(input())
+tT = int(input())
+
+sumac(tO, tT)
