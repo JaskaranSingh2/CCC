@@ -29,45 +29,37 @@ visited = [
     [-1, -5]
     ]
 
-def checker(point, existing, added):
+def checker(point, existing):
     i = 0
     while i < len(existing):
         if point == existing[i]:
             print(point, "danger")
+            print(existing[i], i)
             exit()
         else:
             i += 1
-    
-    j = 0
-    while j < len(added):
-        if added.count(point) > 1:
-            print(point, "danger")
-            exit()
-        else:
-            j += 1
 
     print(point, "safe")
 
-drill = input().split()
 lastPoint = [-1, -5]
-sto = []
 
 while True:
+    drill = input().split()
     if drill[0] == "l":
         lastPoint[0] -= int(drill[1])
-        sto.append(lastPoint)
-        checker(lastPoint, visited, sto)
+        checker(lastPoint, visited)
+        visited.append(lastPoint)
     elif drill[0] == "r":
         lastPoint[0] += int(drill[1])
-        sto.append(lastPoint)
-        checker(lastPoint, visited, sto)
+        checker(lastPoint, visited)
+        visited.append(lastPoint)
     elif drill[0] == "d":
         lastPoint[1] -= int(drill[1])
-        sto.append(lastPoint)
-        checker(lastPoint, visited, sto)
+        checker(lastPoint, visited)
+        visited.append(lastPoint)
     elif drill[0] == "u":
         lastPoint[1] += int(drill[1])
-        sto.append(lastPoint)
-        checker(lastPoint, visited, sto)
+        checker(lastPoint, visited)
+        visited.append(lastPoint)
     elif drill[0] == "q":
         exit()
