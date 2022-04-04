@@ -74,7 +74,4 @@ while True:
     else:
         inputs.append(direction)
         calcNext(inputs)
-
-
-
-
+        
